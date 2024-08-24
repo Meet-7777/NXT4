@@ -83,19 +83,19 @@
 }
 
 .navbar-menu a {
-  color: #000; /* Black text color for links */
+  color: #4B6587; /* Black text color for links */
   text-decoration: none; /* Remove underline */
   font-size: 16px;
   transition: color 0.3s; /* Smooth color transition */
 }
 
 .navbar-menu a:hover {
-  color: #f0a500; /* Color on hover */
+  color: #000; /* Color on hover */
 }
 
 .navbar-menu a.active {
   font-weight: bold; /* Highlight active link */
-  color: #f0a500; /* Different color for active link */
+  color: #000; /* Different color for active link */
 }
 
 /* Loading Styles */
