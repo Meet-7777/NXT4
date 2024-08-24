@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; // Import NavLink
 import './App.css'; // Assuming the styles are in App.css
 
 const Layout = ({ children }) => {
@@ -8,8 +8,8 @@ const Layout = ({ children }) => {
             <nav className="navbar">
                 <div className="navbar-brand">NXT4</div>
                 <div className="navbar-menu">
-                    <Link to="/">CSK Slotted</Link>
-                    <Link to="/csk-philiphs">CSK Philips</Link>
+                    <NavLink to="/" exact activeClassName="active">CSK Slotted</NavLink>
+                    <NavLink to="/csk-philiphs" activeClassName="active">CSK Philips</NavLink>
                 </div>
             </nav>
 
