@@ -1,0 +1,115 @@
+/* Container for centering the content */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center items vertically */
+  flex-direction: column; /* Stack child elements vertically */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #fff; /* White background for the site */
+  color: #000; /* Black text color */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #666; /* Gray for loading text */
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the table horizontally */
+  width: 100%;
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4B6587; /* Black color for the title */
+  font-size: 24px; /* Increase font size for better visibility */
+  font-weight: bold; /* Make title bold */
+}
+
+.data-table {
+  width: 100%;
+  max-width: 100%; /* Ensure the table fits within the container */
+  border-collapse: collapse;
+  background-color: #fff; /* White background for the table */
+  color: #000; /* Black text color */
+  border: 1px solid #000; /* Black border for the table */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.data-table th, .data-table td {
+  padding: 12px; /* Increased padding for better readability */
+  text-align: left;
+  border: 1px solid #000; /* Black border color for table cells */
+  word-wrap: break-word; /* Ensure long words break into the next line */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.data-table th {
+  font-weight: bold; /* Bold text for table headers */
+  background-color: #f1f1f1; /* Light gray background for header */
+}
+
+.data-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Light gray background for even rows */
+}
+
+.data-table tr:hover {
+  background-color: #e0e0e0; /* Slightly darker gray for hovered rows */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px; /* Adjust title font size for smaller screens */
+  }
+
+  .data-table {
+    font-size: 14px; /* Adjust font size for better readability on smaller screens */
+  }
+
+  .data-table th, .data-table td {
+    padding: 8px; /* Adjust padding for smaller screens */
+    font-size: 12px; /* Reduce font size for better fit */
+  }
+}
+
+@media (max-width: 480px) {
+  .data-table th, .data-table td {
+    font-size: 10px; /* Further reduce font size for very small screens */
+    padding: 6px; /* Reduce padding for very small screens */
+  }
+}
+
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 2px solid #000; /* Black border at the bottom of the navbar */
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4B6587;
+}
+
+.footer {
+  position: relative; /* Or absolute if needed */
+  bottom: 0; /* Position it at the bottom of its parent */
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
