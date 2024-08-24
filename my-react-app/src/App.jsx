@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-
 import './App.css';
 import supabase from './supabaseClient';
 
@@ -31,20 +30,17 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="table-container">
       <Helmet>
         <title>NXT4 Product Database</title>
       </Helmet>
-      <nav className="navbar">
-        <div className="navbar-brand">NXT4</div>
-      </nav>
 
       {loading ? (
         <div className="loading">
           <p>Loading data...</p>
         </div>
       ) : (
-        <div className="table-container">
+        <div>
           <h2 className="title">Omni CSK Slotted</h2>
           {data.length > 0 ? (
             <table className="data-table">
@@ -74,11 +70,6 @@ function App() {
           )}
         </div>
       )}
-
-      <footer className="App-footer bg-light p-3 mt-4 footer">
-        <p className="text-center mb-0">© 2024 NXT4. All rights reserved.</p>
-        <p className="text-center mb-0 footer-text">Proudly crafted in India ❤️</p>
-      </footer>
     </div>
   );
 }

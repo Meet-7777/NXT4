@@ -62,17 +62,40 @@
 /* Navbar Styles */
 .navbar {
   width: 100%;
-  background-color: #fff;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #4B6587; /* Accent color for the border */
   padding: 10px 20px;
   display: flex;
+  align-items: center; /* Align items vertically in the center */
   justify-content: space-between;
+  color: #000; /* Black text color */
+  background-color: #fff; /* White background */
 }
 
 .navbar-brand {
   font-size: 24px;
   font-weight: bold;
-  color: #4B6587;
+  color: #4B6587; /* Accent color */
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-menu a {
+  color: #000; /* Black text color for links */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px;
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.navbar-menu a:hover {
+  color: #f0a500; /* Color on hover */
+}
+
+.navbar-menu a.active {
+  font-weight: bold; /* Highlight active link */
+  color: #f0a500; /* Different color for active link */
 }
 
 /* Loading Styles */
@@ -104,6 +127,26 @@
   .data-table td {
     padding: 8px;
     font-size: 12px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .navbar-menu a {
+    padding: 0.5rem;
+    border-bottom: 1px solid #444;
+  }
+
+  .navbar-menu a:last-child {
+    border-bottom: none;
   }
 }
 
