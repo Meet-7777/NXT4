@@ -10,6 +10,9 @@ const Layout = ({ children }) => {
                 <div className="navbar-menu">
                     <NavLink to="/" exact activeClassName="active">CSK Slotted</NavLink>
                     <NavLink to="/csk-philiphs" activeClassName="active">CSK Philips</NavLink>
+                    <NavLink to="/smps-driver-rates" activeClassName="active">SMPS driver</NavLink>
+                    <NavLink to="/dry-wall-pop-rates" activeClassName="active">Dry Wall POP</NavLink>
+                    <NavLink to="/wooden-screw-caprice" activeClassName="active">Wooden Screw Caprice</NavLink>
                 </div>
             </nav>
 

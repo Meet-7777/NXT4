@@ -5,21 +5,28 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './App.css';
 import supabase from './supabaseClient';
 
-export default function SmpsDriver() {
+export default function WoodenScrewCaprice() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
-            let { data: smpsDrivers, error } = await supabase
-                .from("smps_drivers_rate")
-                .select('*');
-            if (error) {
-                console.log("Error fetching the data", error);
+            setError(null); // Reset error state before fetching
+            try {
+                let { data: WoodenScrewCaprice, error } = await supabase
+                    .from("wooden_screw_caprice")
+                    .select('*');
+                if (error) {
+                    setError("Error fetching the data");
+                    setData([]);
+                } else {
+                    setData(WoodenScrewCaprice || []);
+                }
+            } catch (error) {
+                setError("Unexpected error occurred");
                 setData([]);
-            } else {
-                setData(smpsDrivers || []);
             }
             setLoading(false);
         };
@@ -29,21 +36,26 @@ export default function SmpsDriver() {
     return (
         <div className="table-container">
             <Helmet>
-                <title>NXT4 - SMPS Driver Rates</title>
+                <title>NXT4 - Wooden Screw Caprice</title>
             </Helmet>
             {loading ? (
-                <div className="loading">
+                <div className="loading" aria-live="polite">
                     <p>Loading data...</p>
+                </div>
+            ) : error ? (
+                <div className="error">
+                    <p>{error}</p>
                 </div>
             ) : (
                 <div>
-                    <h2 className="title">SMPS Driver</h2>
+                    <h2 className="title">Wooden Screw Caprice</h2>
                     {data.length > 0 ? (
                         <table className="data-table">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Driver Name</th>
+                                    <th>Size</th>
+                                    <th>Packing</th>
                                     <th>Price</th>
                                 </tr>
                             </thead>
@@ -51,7 +63,8 @@ export default function SmpsDriver() {
                                 {data.map((item) => (
                                     <tr key={item.id}>
                                         <td>{item.id}</td>
-                                        <td>{item.driver_name}</td>
+                                        <td>{item.size}</td>
+                                        <td>{item.packing}</td>
                                         <td>{item.price}</td>
                                     </tr>
                                 ))}
