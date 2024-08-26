@@ -29,6 +29,22 @@ function App() {
     fetchData();
   }, []);
 
+  // Sorting function
+  const sortData = (data, key, order = 'asc') => {
+    return data.sort((a, b) => {
+      if (a[key] < b[key]) {
+        return order === 'asc' ? -1 : 1;
+      }
+      if (a[key] > b[key]) {
+        return order === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+  };
+
+  // Sorting by 'id' in ascending order
+  const sortedData = sortData(data, 'id', 'asc');
+
   return (
     <div className="table-container">
       <Helmet>
@@ -42,7 +58,7 @@ function App() {
       ) : (
         <div>
           <h2 className="title">Omni CSK Slotted</h2>
-          {data.length > 0 ? (
+          {sortedData.length > 0 ? (
             <table className="data-table">
               <thead>
                 <tr>
@@ -54,7 +70,7 @@ function App() {
                 </tr>
               </thead>
               <tbody>
-                {data.map((item) => (
+                {sortedData.map((item) => (
                   <tr key={item.id}>
                     <td>{item.id}</td>
                     <td>{item.size}</td>
